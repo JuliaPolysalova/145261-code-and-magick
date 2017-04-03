@@ -43,11 +43,11 @@ window.renderStatistics = function(ctx, names, times) {
   ctx.textBaseline = 'top';
   for(var i = 0; i < times.length; i++) {
     ctx.fillStyle = getColumnColor(names[i]);
-    ctx.fillRect(120 + i * (columnSpace + columnWidth), 240, columnWidth, -times[i] * step);
+    ctx.fillRect(120 + i * (columnSpace + columnWidth), 250, columnWidth, -times[i] * step);
 
     ctx.fillStyle = '#000';
     ctx.fillText(names[i], 120 + i * (columnSpace + columnWidth), 250);
-    ctx.fillText(times[i].toFixed(0), 120 + i * (columnSpace + columnWidth), 70);
+    ctx.fillText(times[i].toFixed(0), 120 + i * (columnSpace + columnWidth), 250-(times[i]*step)-20);
   }
   //ctx.fillRect(120, 250, columnWidth, -times[0] * step);
   //ctx.fillRect(120 + columnSpace, 250, columnWidth, -times[1] * step);
